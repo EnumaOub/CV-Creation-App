@@ -4,9 +4,12 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import editorMain from './components/editor/editorMain.jsx'
 import resumeMain from './components/resume/resumeMain.jsx'
+import dataInit from './dataInit/dataInit.json'
 
 function App() {
-  const [count, setCount] = useState(0)
+  console.log(dataInit)
+  const [data, setData] = useState(dataInit)
+
 
   return (
     <main>

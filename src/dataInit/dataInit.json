@@ -1,0 +1,39 @@
+{
+    "firstName": "Enuma",
+    "lastName": "Elia",
+    "mail": "enuma.elia@mymail.com",
+    "address": "Cyora, Eldemar",
+    "linkedin": "linkedin.com/in/enumaelia",
+    "github": "github.com/enumaelia",
+    "summary": "Hi I'm Enuma Elia and wish to be a web dev.",
+    "work": [
+        {
+            "title": "Engineer FullStack",
+            "company": "Academia",
+            "date": "2010-01-23T18:25:43.511Z",
+            "tasks": [
+                "Analyse Data",
+                "..."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "diploma": "Bachelor in Computer Science",
+            "school": "Cyora",
+            "date": "2008-01-23T18:25:43.511Z"
+        }
+    ],
+    "skills": [
+        {
+            "language": [
+                "Python",
+                "Javascript"
+            ],
+            "technologies": [
+                "Postgres",
+                "Git"
+            ]
+        }
+    ]
+}
