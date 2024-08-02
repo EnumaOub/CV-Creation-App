@@ -1,0 +1,11 @@
+#editor-main {
+    font-style: italic;
+    margin: 2rem 3rem;
+}
+
+.editor {
+    color: black;
+    background-color: white;
+    padding: 1rem;
+    margin: 1rem;
+}
