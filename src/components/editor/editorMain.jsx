@@ -1,6 +1,17 @@
 import './editorMain.css'
 
-export default function editorMain()  {
+export default function Editor({data, setData})  {
+    console.log("EDITOR")
+    console.log(data)
+    function changeName(e) {
+        setData({
+            ...data,
+            info: {
+                ...data.info,
+                firstName: e.target.value
+            }
+        })
+    }
     return (
         <div id="editor-main">
             Editor Main
@@ -10,6 +21,16 @@ export default function editorMain()  {
             </div>
             <div id="personal-editor" className="editor">
                 Personal Data Editor
+                <label id="firstName-editor">
+                    firstName
+                    <input 
+                        value={data.info.firstName}
+                        onChange={changeName}
+                        type="text" 
+                        />
+
+                </label>
+                
 
             </div>
             <div id="work-editor" className="editor">
