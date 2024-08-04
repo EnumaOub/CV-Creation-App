@@ -24,7 +24,7 @@ export default function Input({
             <label id={idName}>
                     {name}
                     <input value={data[name]}
-                        onChange={callback}
+                        onChange={(e) => callback(e, data, name)}
                         type={type}
                         />
             </label>

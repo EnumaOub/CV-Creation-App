@@ -1,16 +1,20 @@
 import './editorMain.css'
 import Accordion from './Accordion'
 import Input from './Input'
+import Personal from './PersonalInfo'
 
 export default function Editor({data, setData})  {
     console.log("EDITOR")
     console.log(data)
-    function changeName(e) {
+    function changeInfo(e, info, name) {
+        console.log("callback")
+        console.log(name)
+        console.log(e)
         setData({
             ...data,
             info: {
-                ...data.info,
-                firstName: e.target.value
+                ...info,
+                [name]: e.target.value
             }
         })
     }
@@ -28,14 +32,12 @@ export default function Editor({data, setData})  {
                 <Accordion
                     legend="Personal Data"
                     content={(
-                        <Input
-                        name="firstName"
-                        data={data.info}
-                        callback={changeName}
-                        type="text"
+                        <Personal
+                        data={data}
+                        setData ={setData}
                         >
-                        
-                        </Input>
+
+                        </Personal>
                     )}
                 >
                 </Accordion>
