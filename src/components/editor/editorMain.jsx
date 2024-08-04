@@ -1,5 +1,6 @@
 import './editorMain.css'
 import Accordion from './Accordion'
+import Input from './Input'
 
 export default function Editor({data, setData})  {
     console.log("EDITOR")
@@ -27,15 +28,14 @@ export default function Editor({data, setData})  {
                 <Accordion
                     legend="Personal Data"
                     content={(
-                        <label id="firstName-editor">
-                    firstName
-                    <input 
-                        value={data.info.firstName}
-                        onChange={changeName}
-                        type="text" 
-                        />
-
-                </label>
+                        <Input
+                        name="firstName"
+                        data={data.info}
+                        callback={changeName}
+                        type="text"
+                        >
+                        
+                        </Input>
                     )}
                 >
                 </Accordion>
