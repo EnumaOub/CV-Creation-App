@@ -1,0 +1,22 @@
+#personal-resume{
+    display: flex;
+    flex-direction: column;
+    margin-top: .2rem;
+}
+
+#personal-resume .main{
+    display: flex;
+    justify-content: space-between;
+}
+
+#personal-resume h1{
+    font-size: 1.5rem;
+}
+
+#personal-resume  p{
+    margin: 0;
+}
+
+#personal-resume #summary{
+    text-align: center;
+}

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 
 export default function Header({info}){
-    console.log("Header")
     return (
         <>
             <div className="header main">

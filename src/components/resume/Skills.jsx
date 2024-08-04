@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 
 export default function Skills({ info }){
-    console.log("Skills")
     return (
         <>
             {info.language.length > 0 ? (

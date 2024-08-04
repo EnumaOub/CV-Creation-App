@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 
 export default function ShowWorkEduc({ arrData }){
-    console.log("ShowWorkEduc")
     return (
         <>
             {arrData.length > 0 ? (

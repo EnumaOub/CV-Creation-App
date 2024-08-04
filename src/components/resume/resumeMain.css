@@ -3,7 +3,8 @@
     color: black;
     margin: 2rem 3rem;
     padding: 1rem;
-    min-height: 100%;
+    font-family: "Calibri", sans-serif;
+    font-size: 0.9rem;
 }
 
 #resume-main h2 {
