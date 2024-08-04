@@ -1,4 +1,5 @@
 import './editorMain.css'
+import Accordion from './Accordion'
 
 export default function Editor({data, setData})  {
     console.log("EDITOR")
@@ -16,12 +17,17 @@ export default function Editor({data, setData})  {
         <div id="editor-main">
             Editor Main
             <div id="title-editor" className="editor">
-                Title Editor
-
+                <Accordion
+                    legend="Title Resume"
+                    content="Test title"
+                >
+                </Accordion>
             </div>
             <div id="personal-editor" className="editor">
-                Personal Data Editor
-                <label id="firstName-editor">
+                <Accordion
+                    legend="Personal Data"
+                    content={(
+                        <label id="firstName-editor">
                     firstName
                     <input 
                         value={data.info.firstName}
@@ -30,19 +36,35 @@ export default function Editor({data, setData})  {
                         />
 
                 </label>
+                    )}
+                >
+                </Accordion>
+                
                 
 
             </div>
             <div id="work-editor" className="editor">
-                Work Data Editor
+                <Accordion
+                    legend="Work Data"
+                    content="Test Work"
+                >
+                </Accordion>
 
             </div>
             <div id="educ-editor" className="editor">
-                Education Data Editor
+                <Accordion
+                    legend="Education Data"
+                    content="Test Education"
+                >
+                </Accordion>
 
             </div>
             <div id="skills-editor" className="editor">
-                Skills Data Editor
+                <Accordion
+                    legend="Skills Data"
+                    content="Test Skills"
+                >
+                </Accordion>
 
             </div>
         </div>
