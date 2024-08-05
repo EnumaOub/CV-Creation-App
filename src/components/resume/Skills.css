@@ -1,0 +1,18 @@
+/* .skills {
+    display: flex;
+    gap: 0.2rem;
+} */
+
+.skills {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.skills .skill-list {
+    display: flex;
+    gap: 0.2rem;
+}
+
+#skills-resume p {
+    margin: 0.2rem 0;
+}

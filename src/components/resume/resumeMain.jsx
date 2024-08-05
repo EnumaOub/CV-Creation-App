@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 import './resumeMain.css'
 import './Header.css'
+import './ShowWorkEduc.css'
+import './Skills.css'
 import Header from './Header'
 import ShowWorkEduc from './ShowWorkEduc'
 import Skills from './Skills'
