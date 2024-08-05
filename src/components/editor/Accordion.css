@@ -1,0 +1,21 @@
+.accordion .header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.accordion .header:hover {
+    display: flex;
+    justify-content: space-between;
+}
+.accordion .content-editor {    
+    max-height: 0rem;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease 1s;
+}
+
+.accordion .content-editor.active {    
+    max-height: 20rem;
+    opacity: 1;
+    transition: max-height 1s ease, opacity 0.5s ease;
+}

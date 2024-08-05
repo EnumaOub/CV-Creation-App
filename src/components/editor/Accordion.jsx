@@ -22,8 +22,8 @@ export default function Accordion({ legend, content }) {
                     }
                 </div>
             </div>
-            { !open ? (<div />) : 
-                    (<div>{content}</div>) 
+            { !open ? (<div className='content-editor'></div>) : 
+                    (<div className='content-editor active'>{content}</div>) 
             }
             
         </div>
