@@ -11,11 +11,14 @@
 .accordion .content-editor {    
     max-height: 0rem;
     opacity: 0;
-    transition: max-height 0.5s ease, opacity 0.5s ease 1s;
+    transition: max-height 0.5s ease, opacity 1.2s ease;
 }
 
 .accordion .content-editor.active {    
     max-height: 20rem;
     opacity: 1;
-    transition: max-height 1s ease, opacity 0.5s ease;
+}
+
+.accordion h2 {
+    margin: 0;
 }

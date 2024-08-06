@@ -1,4 +1,5 @@
 export default function Input({ 
+    label,
     name,
     data,
     callback=null,
@@ -12,7 +13,7 @@ export default function Input({
     if (callback === null) {
         return (
             <label id={idName}>
-                    {name}
+                    {label}
                     <input value={data[name]}
                         type={type}
                         />
@@ -22,7 +23,7 @@ export default function Input({
     else {
         return (
             <label id={idName}>
-                    {name}
+                    {label}
                     <input value={data[name]}
                         onChange={(e) => callback(e, data, name)}
                         type={type}

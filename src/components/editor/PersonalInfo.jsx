@@ -1,5 +1,15 @@
 import Input from "./Input"
 
+const convertKey = {
+    firstName: "First Name",
+    lastName: "Last Name",
+    mail: "Mail Adress",
+    address: "Adress",
+    linkedin: "LinkedIn",
+    github: "Github",
+    summary: "Summary"
+}
+
 export default function Personal({data, setData}) {
     const headers = Object.keys(data.info);
     function changeInfo(e, info, name) {
@@ -17,6 +27,7 @@ export default function Personal({data, setData}) {
         <>{
             headers.map((key) => 
                 <Input
+                label={convertKey[key]}
             key={key}
             name={key}
             data={data.info}

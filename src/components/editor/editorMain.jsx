@@ -1,5 +1,6 @@
 import './editorMain.css'
 import './Accordion.css'
+import './PersonalInfo.css'
 import Accordion from './Accordion'
 import Input from './Input'
 import Personal from './PersonalInfo'

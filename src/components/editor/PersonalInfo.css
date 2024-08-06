@@ -1,0 +1,36 @@
+#personal-editor .content-editor.active {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 0.3rem 1rem;
+    overflow: scroll;
+}
+
+#personal-editor .content-editor.active label {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+#personal-editor .content-editor.active input {
+    border-radius: .4rem;
+    background-color: rgb(243 244 246 );
+    color: black;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+#personal-editor .content-editor.active input:focus {
+    border: 1px solid red;
+}
+
+
+#personal-editor .content-editor.active > *:nth-last-of-type(1) {
+
+    grid-template-columns: 0.128fr 1fr;
+    grid-column: span 2
+}
+
+#personal-editor .content-editor.active > *:nth-last-of-type(1) input {
+
+}
