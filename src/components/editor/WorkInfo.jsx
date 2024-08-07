@@ -16,14 +16,16 @@ export default function Work({data, setData}) {
     console.log(headers)
     data.work.map((elem) => console.log(elem[headers[0]]))
     function changeInfo(e, work, name, loc) {
-        work[loc] = {
-            ...work[loc],
+        
+        data["work"][loc] = {
+            ...work,
             [name]: e.target.value
-        }
+        };
+
         setData({
             ...data,
             work: [
-                ...work
+                ...data["work"]
             ]
         })
     }
@@ -55,6 +57,7 @@ export default function Work({data, setData}) {
             data={elem}
             callback={changeInfo}
             type="text"
+            loc={i}
             >
             
             </Input>
