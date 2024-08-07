@@ -5,19 +5,22 @@ export default function Input({
     callback=null,
     type
  }) {
-    const idName = `${name}-editor`
-    console.log("Inputs")
-    console.log(name)
+    const idName = `${name}-editor`;
+    console.log("Input")
     console.log(data)
-    console.log(data[name])
-    if (callback === null) {
+    console.log(name)
+    if (Array.isArray(data[name])) {
+        console.log(data[name])
         return (
-            <label id={idName}>
+            data[name].map((elem) => 
+            <label id={idName} key={elem}>
                     {label}
-                    <input value={data[name]}
+                    <input value={elem}
+                        onChange={(e) => callback(e, data, name)}
                         type={type}
                         />
             </label>
+            )
         )
     }
     else {

@@ -4,6 +4,7 @@ import './PersonalInfo.css'
 import Accordion from './Accordion'
 import Input from './Input'
 import Personal from './PersonalInfo'
+import Work from './WorkInfo'
 
 export default function Editor({data, setData})  {
     console.log("EDITOR")
@@ -48,9 +49,16 @@ export default function Editor({data, setData})  {
 
             </div>
             <div id="work-editor" className="editor">
-                <Accordion
+            <Accordion
                     legend="Work Data"
-                    content="Test Work"
+                    content={(
+                        <Work
+                        data={data}
+                        setData ={setData}
+                        >
+
+                        </Work>
+                    )}
                 >
                 </Accordion>
 
