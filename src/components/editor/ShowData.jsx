@@ -11,7 +11,7 @@ function ShowWorkEduc(
 
     function getPos(e) {
         console.log(e.target.classList);
-        if (e.target.classList.contains("data-glob")) {
+        if (e.target.classList.contains("data-show")) {
             setPos(parseInt(e.target.id.split("-")[1]));
         }
     }
@@ -25,22 +25,26 @@ function ShowWorkEduc(
         callback(emptyData, data.length, label)
     }
 
-    const classGen = "data-glob "+label;
+    const classGen = "data-show "+label;
     const headers = Object.keys(data[0]);
     if (pos === null) {
             return ( 
-                <>{
+                <>
+                <div className='show-data-glob'>{
                     data.map((elem, i) => 
                         <div className={classGen} id={label+"-"+i} key={i} onClick={getPos}>{
                             headers.map((cle) => 
-                                <div className={"data-glob "+cle} id={cle+"-"+i} key={cle}>{elem[cle]}</div>
+                                <div className={"data-res "+cle} id={cle+"-"+i} key={cle}>{elem[cle]}</div>
                             
                             )
                         }
+                        <h2 className='edit'>EDIT</h2>
                         </div>
                     )
                     }
-                    <button type="button" onClick={addElem}>Add</button>
+                    
+                </div>
+                <button type="button" onClick={addElem}>Add</button>
                 </>
             )
     }

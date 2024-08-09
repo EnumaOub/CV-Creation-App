@@ -58,7 +58,7 @@ export default function Form({
 
     
     return (
-        <form className={"form-"+label} onSubmit={SubmitChange}>
+        <form className={"form "+label} onSubmit={SubmitChange}>
             {
                 headers.map((cle) => 
                     (Array.isArray(dataShow[cle])) ? 
