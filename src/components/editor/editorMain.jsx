@@ -18,6 +18,14 @@ const emptyData = {
         "title": "",
         "name": "",
         "date": "",
+    },
+    skills: {
+        "language": [
+            ""
+        ],
+        "technologies": [
+            ""
+        ]
     }
     
 }
@@ -26,16 +34,25 @@ export default function Editor({data, setData})  {
     console.log("EDITOR")
     console.log(data)
 
-    function changeInfo(work, loc, name) {
-        
-        data[name][loc] = work;
+    function changeInfo(dataModif, loc, name) {
+        if (Array.isArray(data[name])) {
+            data[name][loc] = dataModif;
 
-        setData({
-            ...data,
-            [name]: [
-                ...data[name]
-            ]
-        })
+            setData({
+                ...data,
+                [name]: [
+                    ...data[name]
+                ]
+            })
+        }
+        else {
+            setData({
+                ...data,
+                [name]: {
+                    ...dataModif
+                }
+            })
+        }
     }
 
     return (
@@ -104,7 +121,17 @@ export default function Editor({data, setData})  {
             <div id="skills-editor" className="editor">
                 <Accordion
                     legend="Skills Data"
-                    content="Test Skills"
+                    content={(
+                        <ShowData
+                            key="skills"
+                            label="skills"
+                            data={data.skills}
+                            callback={changeInfo}
+                            emptyData={emptyData.skills}
+                        >
+
+                        </ShowData>
+                    )}
                 >
                 </Accordion>
 

@@ -9,10 +9,11 @@ export default function Form({
     loc=0
  }) {
     const [dataShow, setData] = useState(data);
-    const idName = `${name}-editor`;
-    const headers = Object.keys(dataShow);
+
     console.log("dataShow")
     console.log(dataShow)
+    const idName = `${name}-editor`;
+    const headers = Object.keys(dataShow);
 
 
     function addElem(e) {
@@ -34,6 +35,8 @@ export default function Form({
             if (input.type ==="text") {
                 console.log(input.className);
                 let cle = input.className
+                console.log("cle")
+                console.log(cle)
                 if (cle.includes("-")){
                     const i = parseInt(cle.split("-")[1])
                     cle = cle.split("-")[0]
