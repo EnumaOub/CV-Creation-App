@@ -2,22 +2,42 @@ import './editorMain.css'
 import './Accordion.css'
 import './PersonalInfo.css'
 import Accordion from './Accordion'
-import Input from './Input'
 import Personal from './PersonalInfo'
-import Work from './WorkInfo'
+import ShowData from './ShowData'
+
+const emptyData = {
+    work: {
+        "title": "",
+        "name": "",
+        "date": "",
+        "tasks": [
+            ""
+        ]
+    },
+    education: {
+        "title": "",
+        "name": "",
+        "date": "",
+    }
+    
+}
 
 export default function Editor({data, setData})  {
     console.log("EDITOR")
     console.log(data)
-    function changeInfo(e, info, name) {
+
+    function changeInfo(work, loc, name) {
+        
+        data[name][loc] = work;
+
         setData({
             ...data,
-            info: {
-                ...info,
-                [name]: e.target.value
-            }
+            [name]: [
+                ...data[name]
+            ]
         })
     }
+
     return (
         <div id="editor-main">
             Editor Main
@@ -49,12 +69,15 @@ export default function Editor({data, setData})  {
             <Accordion
                     legend="Work Data"
                     content={(
-                        <Work
-                        data={data}
-                        setData ={setData}
+                        <ShowData
+                            key="work"
+                            label="work"
+                            data={data.work}
+                            callback={changeInfo}
+                            emptyData={emptyData.work}
                         >
 
-                        </Work>
+                        </ShowData>
                     )}
                 >
                 </Accordion>
@@ -63,7 +86,17 @@ export default function Editor({data, setData})  {
             <div id="educ-editor" className="editor">
                 <Accordion
                     legend="Education Data"
-                    content="Test Education"
+                    content={(
+                        <ShowData
+                            key="education"
+                            label="education"
+                            data={data.education}
+                            callback={changeInfo}
+                            emptyData={emptyData.education}
+                        >
+
+                        </ShowData>
+                    )}
                 >
                 </Accordion>
 

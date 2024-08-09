@@ -50,8 +50,9 @@ export default function ShowData({
     else {
         return (
                     <Form
+                        key={label}
                         label={label}
-                        name="work"
+                        name={label}
                         data={data[pos]}
                         reset={resetShow}
                         callback={callback}

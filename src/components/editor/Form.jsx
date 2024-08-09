@@ -46,7 +46,7 @@ export default function Form({
             
           });
 
-        callback(data, loc);
+        callback(data, loc, name);
         reset();
     }
 
