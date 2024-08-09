@@ -67,51 +67,24 @@ function ShowWorkEduc(
 function ShowTask(
     label,
     data,
-    callback,
-    emptyData) {
-    const [key, setKey] = useState(null);
-    const headers = Object.keys(data);
+    callback) {
 
-    function getKey(e) {
-        console.log(e.target.classList);
-        if (e.target.classList.contains("data-glob")) {
-            setKey(parseInt(e.target.id));
-        }
-    }
-    function resetShow() {
-        setKey(null);
-    }
-
-    
-    if (key === null) {
-            return ( 
-                <>
-                    {
-                        headers.map((cle) => 
-                            <div className={"data-glob "+cle} id={cle} key={cle} onClick={getKey}>{cle}</div>
-                        
-                        )
-                    }
-                </>
-            )
-    }
-    else {
         return (
-                    <Form
-                        key={label}
-                        label={label}
-                        name={label}
-                        data={data}
-                        reset={resetShow}
-                        callback={callback}
-                        type="text"
-                        loc={0}
-                    >
-                    
-                    </Form>
+            <Form
+                key={label}
+                label={label}
+                name={label}
+                data={data}
+                reset={null}
+                callback={callback}
+                type="text"
+                loc={0}
+            >
+            
+            </Form>
 
         )
-    }
+    
     
 }
 
@@ -123,6 +96,6 @@ export default function ShowData({
     emptyData
  }) {
 
-    return Array.isArray(data) ? ShowWorkEduc(label, data, callback, emptyData) : ShowTask(label, data, callback, emptyData);
+    return Array.isArray(data) ? ShowWorkEduc(label, data, callback, emptyData) : ShowTask(label, data, callback);
     
  }

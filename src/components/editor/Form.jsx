@@ -50,7 +50,10 @@ export default function Form({
           });
 
         callback(data, loc, name);
-        reset();
+        if (reset !== null) {
+            reset();
+        }
+        
     }
 
     
