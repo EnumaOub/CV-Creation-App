@@ -1,6 +1,15 @@
 import Input from "./Input"
 import ShowData from "./ShowData";
 
+const emptyData = {
+    "title": "",
+    "name": "",
+    "date": "",
+    "tasks": [
+        ""
+    ]
+}
+
 const convertKey = {
     firstName: "First Name",
     lastName: "Last Name",
@@ -14,12 +23,9 @@ const convertKey = {
 export default function Work({data, setData}) {
     const headers = Object.keys(data.work[0]);
     
-    function changeInfo(e, work, name, loc) {
+    function changeInfo(work, loc) {
         
-        data["work"][loc] = {
-            ...work,
-            [name]: e.target.value
-        };
+        data["work"][loc] = work;
 
         setData({
             ...data,
@@ -28,50 +34,18 @@ export default function Work({data, setData}) {
             ]
         })
     }
-    console.log( data.work.map((elem, i) => 
-        <div key={i}>{
-            headers.map((cle) => 
-                <Input
-                label={cle}
-            key={cle}
-            name={cle}
-            data={elem[cle]}
-            callback={(changeInfo)}
-            type="text"
-            >
-            
-            </Input>
-            )
-        }</div>
-    )
-)
     
     return ( 
-        <>
-        {data.work.map((elem, i) => 
-        <div key={i}>{
-            headers.map((cle) => 
-                <Input
-                label={cle}
-            key={cle}
-            name={cle}
-            data={elem}
-            callback={changeInfo}
-            type="text"
-            loc={i}
-            >
-            
-            </Input>
-            )
-        }</div>
-    )}
 
-    <ShowData
-        label="work"
-        data={data.work}
-    
-    ></ShowData>
-    </>
-)
+        <ShowData
+            label="work"
+            data={data.work}
+            callback={changeInfo}
+            emptyData={emptyData}
+        >
+
+        </ShowData>
+
+    )
 
 }
