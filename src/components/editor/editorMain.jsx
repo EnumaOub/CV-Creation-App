@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './editorMain.css'
 import './Accordion.css'
 import './PersonalInfo.css'
@@ -32,27 +33,37 @@ const emptyData = {
 }
 
 export default function Editor({data, setData})  {
-    console.log("EDITOR")
-    console.log(data)
 
-    function changeInfo(dataModif, loc, name) {
-        if (Array.isArray(data[name])) {
-            data[name][loc] = dataModif;
-
+    function changeInfo(dataModif, loc, namel, deleteB=false) {
+        if (deleteB) {
+            data[namel].splice(loc, 1);
+    
             setData({
-                ...data,
-                [name]: [
-                    ...data[name]
-                ]
-            })
+                    ...data,
+                    [namel]: [
+                        ...data[namel]
+                    ]
+                })
         }
         else {
-            setData({
-                ...data,
-                [name]: {
-                    ...dataModif
-                }
-            })
+            if (Array.isArray(data[namel])) {
+                const newData = [...data[namel]]
+                newData[loc] = dataModif;
+                setData({
+                    ...data,
+                    [namel]: [
+                        ...newData
+                    ]
+                })
+            }
+            else {
+                setData({
+                    ...data,
+                    [namel]: {
+                        ...dataModif
+                    }
+                })
+            }
         }
     }
 

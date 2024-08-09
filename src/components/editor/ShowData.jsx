@@ -11,16 +11,21 @@ function ShowWorkEduc(
 
     function getPos(e) {
         console.log(e.target.classList);
-        if (e.target.classList.contains("data-show")) {
-            setPos(parseInt(e.target.id.split("-")[1]));
+        setPos(parseInt(e.target.id.split("-")[1]));
+    }
+    function deleteByPos(e) {
+        const loc = parseInt(e.target.id.split("-")[1]);
+        if  (loc>0) {
+            setPos(null);
+            callback(emptyData, loc, label, true)
         }
+        
     }
     function resetShow() {
         setPos(null);
     }
 
     function addElem() {
-        console.log(data)
         setPos(data.length);
         callback(emptyData, data.length, label)
     }
@@ -32,13 +37,24 @@ function ShowWorkEduc(
                 <>
                 <div className='show-data-glob'>{
                     data.map((elem, i) => 
-                        <div className={classGen} id={label+"-"+i} key={i} onClick={getPos}>{
+                        <div className={classGen} key={i+elem}>{
                             headers.map((cle) => 
-                                <div className={"data-res "+cle} id={cle+"-"+i} key={cle}>{elem[cle]}</div>
+                                <div className={"data-res "+cle} id={cle+"-"+i} key={cle+i}>{Array.isArray(elem[cle])? (
+                                    <ul>
+                                        {elem[cle].map((item,i) => 
+                                        <li key={i+cle}>{item}</li>
+                                        )}
+                                    </ul>
+                                ):(
+                                    elem[cle]
+                                )}
+                            
+                            </div>
                             
                             )
                         }
-                        <h2 className='edit'>EDIT</h2>
+                        <button className='btn edit' id={label+"_edit-"+i}  onClick={getPos}>EDIT</button>
+                        <button className='btn delete' id={label+"_delete-"+i}  onClick={deleteByPos}>DELETE</button>
                         </div>
                     )
                     }
@@ -99,6 +115,8 @@ export default function ShowData({
     callback,
     emptyData
  }) {
+
+    
 
     return Array.isArray(data) ? ShowWorkEduc(label, data, callback, emptyData) : ShowTask(label, data, callback);
     

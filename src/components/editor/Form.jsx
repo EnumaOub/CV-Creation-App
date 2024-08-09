@@ -8,18 +8,14 @@ export default function Form({
     type,
     loc=0
  }) {
-    const [dataShow, setData] = useState(data);
-
-    console.log("dataShow")
-    console.log(dataShow)
-    const idName = `${name}-editor`;
+    const [dataShow, setDataShow] = useState({...data});
     const headers = Object.keys(dataShow);
 
 
     function addElem(e) {
         const cle = e.target.parentElement.className;
         
-        setData({
+        setDataShow({
             ...dataShow,
             [cle]: [
                 ...dataShow[cle],
@@ -33,23 +29,20 @@ export default function Form({
         e.preventDefault();
         Array.from(e.target.elements).forEach((input) => {
             if (input.type ==="text") {
-                console.log(input.className);
-                let cle = input.className
-                console.log("cle")
-                console.log(cle)
+                let cle = input.className;
                 if (cle.includes("-")){
                     const i = parseInt(cle.split("-")[1])
                     cle = cle.split("-")[0]
-                    data[cle][i] = input.value;
+                    dataShow[cle][i] = input.value;
                 }
                 else {
-                    data[cle] = input.value;
+                    dataShow[cle] = input.value;
                 }
             }
             
           });
 
-        callback(data, loc, name);
+        callback(dataShow, loc, name);
         if (reset !== null) {
             reset();
         }

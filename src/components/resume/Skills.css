@@ -3,12 +3,12 @@
     gap: 0.2rem;
 } */
 
-.skills {
+#skills-resume .skills {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
 
-.skills .skill-list {
+#skills-resume .skills .skill-list {
     display: flex;
     gap: 0.2rem;
 }
