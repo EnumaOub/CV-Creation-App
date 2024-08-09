@@ -10,9 +10,6 @@ export default function Editor({data, setData})  {
     console.log("EDITOR")
     console.log(data)
     function changeInfo(e, info, name) {
-        console.log("callback")
-        console.log(name)
-        console.log(e)
         setData({
             ...data,
             info: {

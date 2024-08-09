@@ -7,9 +7,7 @@ export default function Input({
     loc=0
  }) {
     const idName = `${name}-editor`;
-    console.log("Input")
-    console.log(data)
-    console.log(loc)
+
     if (Array.isArray(data[name])) {
         console.log(data[name])
         return (

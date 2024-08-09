@@ -1,4 +1,5 @@
 import Input from "./Input"
+import ShowData from "./ShowData";
 
 const convertKey = {
     firstName: "First Name",
@@ -12,9 +13,7 @@ const convertKey = {
 
 export default function Work({data, setData}) {
     const headers = Object.keys(data.work[0]);
-    console.log("WORK")
-    console.log(headers)
-    data.work.map((elem) => console.log(elem[headers[0]]))
+    
     function changeInfo(e, work, name, loc) {
         
         data["work"][loc] = {
@@ -37,7 +36,7 @@ export default function Work({data, setData}) {
             key={cle}
             name={cle}
             data={elem[cle]}
-            callback={changeInfo}
+            callback={(changeInfo)}
             type="text"
             >
             
@@ -47,7 +46,9 @@ export default function Work({data, setData}) {
     )
 )
     
-    return ( data.work.map((elem, i) => 
+    return ( 
+        <>
+        {data.work.map((elem, i) => 
         <div key={i}>{
             headers.map((cle) => 
                 <Input
@@ -63,7 +64,14 @@ export default function Work({data, setData}) {
             </Input>
             )
         }</div>
-    )
+    )}
+
+    <ShowData
+        label="work"
+        data={data.work}
+    
+    ></ShowData>
+    </>
 )
 
 }
