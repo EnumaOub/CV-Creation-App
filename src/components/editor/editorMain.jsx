@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { jsPDF } from "jspdf";
+import html2canvas from 'html2canvas';
 import './editorMain.css'
 import './Accordion.css'
 import './Input.css'
@@ -33,6 +34,21 @@ const emptyData = {
 }
 
 export default function Editor({data, setData})  {
+    
+
+    function downloadResume() {
+        const doc = new jsPDF('p', 'pt', 'a4',true);
+        const resume = document.getElementById("resume-main");
+        const resumeName = document.getElementById("title-resume-pdf").value;
+        html2canvas(resume, {
+            scale: 1,
+          }).then(canvas => {
+            const img = canvas.toDataURL("image/jpeg", 1);
+            doc.addImage(img, 'JPEG', 50, 0);
+            doc.save(resumeName)
+          });
+    }
+
 
     function changeInfo(dataModif, loc, namel, deleteB=false) {
         if (deleteB) {
@@ -71,11 +87,8 @@ export default function Editor({data, setData})  {
         <div id="editor-main">
             Editor Main
             <div id="title-editor" className="editor">
-                <Accordion
-                    legend="Title Resume"
-                    content="Test title"
-                >
-                </Accordion>
+                <input id="title-resume-pdf" type="text" defaultValue="Resume Title" />
+                <button type="button" onClick={downloadResume}>Download</button>
             </div>
             <div id="personal-editor" className="editor">
                 <Accordion

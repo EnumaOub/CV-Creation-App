@@ -9,3 +9,47 @@
     margin: 1rem;
     border-radius: .7rem;
 }
+
+#title-editor {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+#title-editor input {
+    width: 100%;
+    border-radius: .4rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: #333;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#title-editor input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+#title-editor button {
+    cursor: pointer;
+    border-radius: .4rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    background-color: #4e4caf;
+    color: white;
+    margin-left: .1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#title-editor button:hover {
+    background-color: #4e4caf; 
+    transform: scale(1.05);
+}
+
+#title-editor button:focus {
+    outline: none; 
+    box-shadow: 0 0 5px #4e4caf; 
+}
