@@ -19,6 +19,10 @@ function ShowWorkEduc(
             setPos(null);
             callback(emptyData, loc, label, true)
         }
+        else {
+            setPos(0);
+            callback(emptyData, loc, label, false)
+        }
         
     }
     function resetShow() {
