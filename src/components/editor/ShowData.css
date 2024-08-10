@@ -15,11 +15,10 @@
     opacity: 1;
     transition: transform 0.4s ease-out, opacity 0.4s ease-in;
     max-width: 18.75rem;
-    z-index: 4;
 }
 
 .data-show:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     background: rgba(211, 211, 211, 0.2);
     .data-res {
         opacity: 0.3;
@@ -43,19 +42,40 @@
 
 .data-show .btn {
     position: absolute;
+    top: 40%;
     z-index: -1;
     opacity: 0;
     transition: opacity 0.4s ease-in;
     margin: .2rem;
+    width: 40%;
 }
 
 .data-show .edit {
     left: 0;
-    top: 0;
 }
 
 .data-show .delete {
     right: 0;
-    top: 0;
     background-color: red;
+}
+
+.add-btn {
+    border-radius: .4rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    margin-left: .1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    grid-column: 1 / -1;
+}
+
+.add-btn:hover {
+    background-color: #45a049; 
+    transform: scale(1.05);
+}
+
+.add-btn:focus {
+    outline: none; 
+    box-shadow: 0 0 5px #4CAF50; 
 }

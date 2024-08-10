@@ -15,7 +15,7 @@
 }
 
 .accordion .content-editor.active {    
-    max-height: 20rem;
+    max-height: 50rem;
     opacity: 1;
 }
 

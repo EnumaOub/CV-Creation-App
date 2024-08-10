@@ -53,14 +53,17 @@ function ShowWorkEduc(
                             
                             )
                         }
-                        <button className='btn edit' id={label+"_edit-"+i}  onClick={getPos}>EDIT</button>
-                        <button className='btn delete' id={label+"_delete-"+i}  onClick={deleteByPos}>DELETE</button>
+                        <div className='buttons-show'>
+                            <button className='btn edit' id={label+"_edit-"+i}  onClick={getPos}>EDIT</button>
+                            <button className='btn delete' id={label+"_delete-"+i}  onClick={deleteByPos}>DELETE</button>
+                        </div>
+                        
                         </div>
                     )
                     }
                     
                 </div>
-                <button type="button" onClick={addElem}>Add</button>
+                <button type="button" class="add-btn" onClick={addElem}>Add</button>
                 </>
             )
     }

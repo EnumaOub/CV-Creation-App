@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import './editorMain.css'
 import './Accordion.css'
-import './PersonalInfo.css'
+import './Input.css'
+import './Form.css'
 import './ShowData.css'
 import Accordion from './Accordion'
 import Personal from './PersonalInfo'
@@ -29,7 +30,6 @@ const emptyData = {
             ""
         ]
     }
-    
 }
 
 export default function Editor({data, setData})  {

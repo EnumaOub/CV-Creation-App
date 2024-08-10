@@ -1,0 +1,75 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    overflow: scroll;
+}
+
+.form .tasks label {
+    margin-top: .5rem;
+}
+
+.form label {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+.form input, .form button {
+    border-radius: .4rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.form input:not([type="submit"]) {
+    color: #333;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.form button, .form input[type="submit"] {
+    cursor: pointer;
+}
+
+.form button {
+    background-color: #4CAF50;
+    color: white;
+    margin-left: .1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form button:hover {
+    background-color: #45a049; 
+    transform: scale(1.05);
+}
+
+.form button:focus {
+    outline: none; 
+    box-shadow: 0 0 5px #4CAF50; 
+}
+
+.form input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form input[type="submit"]:hover {
+    background-color: #0056b3; 
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.form input[type="submit"]:focus {
+    outline: none; 
+    box-shadow: 0 0 5px #007BFF; 
+}

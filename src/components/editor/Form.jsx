@@ -1,4 +1,24 @@
 import { useState } from 'react'
+
+const labelReplacer = {
+    work: {
+        "title": "Job Title",
+        "name": "Company Name",
+        "date": "Date employed",
+        "tasks": "Tasks"
+    },
+    education: {
+        "title": "Diploma's name",
+        "name": "Diplome Deliverer",
+        "date": "Date Study",
+    },
+    skills: {
+        "language": "Language Known",
+        "technologies": "Techs Known"
+    }
+}
+
+
 export default function Form({ 
     label,
     name,
@@ -60,7 +80,7 @@ export default function Form({
                             {
                             dataShow[cle].map((elem, i) => 
                                 <label key={elem}>
-                                        {cle}
+                                        {labelReplacer[label][cle] + " " + ( i + 1 ).toString()}
                                         <input 
                                             defaultValue={elem}
                                             className={cle+"-"+i}
@@ -69,13 +89,13 @@ export default function Form({
                                 </label>
                                 )
                             }
-                            <button type="button" onClick={addElem}>Add</button>
+                            <button type="button" onClick={addElem}>Add Task</button>
                         </div>
                     ) :
 
                     (
                         <label key={cle}>
-                            {cle}
+                            {labelReplacer[label][cle]}
                             <input 
                                 defaultValue={dataShow[cle]}
                                 className={cle}

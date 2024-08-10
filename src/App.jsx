@@ -7,7 +7,6 @@ import dataInit from './dataInit/dataInit.json'
 function App() {
   
   const [data, setData] = useState(dataInit)
-  console.log("5")
 
 
   return (
