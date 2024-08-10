@@ -15,7 +15,7 @@ function ShowWorkEduc(
     }
     function deleteByPos(e) {
         const loc = parseInt(e.target.id.split("-")[1]);
-        if  (loc>0) {
+        if (data.length > 1) {
             setPos(null);
             callback(emptyData, loc, label, true)
         }
