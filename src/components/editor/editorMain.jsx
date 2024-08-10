@@ -85,7 +85,6 @@ export default function Editor({data, setData})  {
 
     return (
         <div id="editor-main">
-            Editor Main
             <div id="title-editor" className="editor">
                 <input id="title-resume-pdf" type="text" defaultValue="Resume Title" />
                 <button type="button" onClick={downloadResume}>Download</button>
