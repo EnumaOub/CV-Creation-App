@@ -10,11 +10,20 @@
     },
     "work": [
         {
-            "title": "Engineer FullStack",
+            "title": "Developper FullStack",
             "name": "Academia",
             "date": "2011-2016",
             "tasks": [
-                "Analyse Data",
+                "Design and developed 50+ software components",
+                "Analysing system flows"
+            ]
+        },
+        {
+            "title": "Intern Web development",
+            "name": "Situa",
+            "date": "2010-2011",
+            "tasks": [
+                "Wrote hudreds of unit tests",
                 "..."
             ]
         }
@@ -24,16 +33,26 @@
             "title": "Bachelor in Computer Science",
             "name": "Cyora",
             "date": "2008-2011"
+        },
+        {
+            "title": "Master in Computer Science",
+            "name": "Cyora",
+            "date": "2016-2019"
         }
     ],
     "skills": {
             "language": [
                 "Python",
-                "Javascript"
+                "Javascript",
+                "C"
             ],
             "technologies": [
                 "Postgres",
-                "Git"
+                "Git",
+                "Docker",
+                "React",
+                "CSS",
+                "HTML"
             ]
         }
     

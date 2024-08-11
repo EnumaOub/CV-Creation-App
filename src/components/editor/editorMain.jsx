@@ -8,6 +8,9 @@ import './ShowData.css'
 import Accordion from './Accordion'
 import Personal from './PersonalInfo'
 import ShowData from './ShowData'
+import Icon from '@mdi/react';
+import { mdiInformation, mdiBookEducation, mdiBriefcase, mdiLanguageJavascript, mdiDownload } from '@mdi/js';
+
 
 const emptyData = {
     work: {
@@ -87,11 +90,11 @@ export default function Editor({data, setData})  {
         <div id="editor-main">
             <div id="title-editor" className="editor">
                 <input id="title-resume-pdf" type="text" defaultValue="Resume Title" />
-                <button type="button" onClick={downloadResume}>Download</button>
+                <button type="button" onClick={downloadResume}><div className="icon-text">Download<Icon path={mdiDownload} size={1} /></div></button>
             </div>
             <div id="personal-editor" className="editor">
                 <Accordion
-                    legend="Personal Data"
+                    legend={<div className="icon-text"><Icon path={mdiInformation} size={1} />Personal</div>}
                     content={(
                         <Personal
                         data={data}
@@ -108,7 +111,7 @@ export default function Editor({data, setData})  {
             </div>
             <div id="work-editor" className="editor">
             <Accordion
-                    legend="Work Data"
+                    legend={<div className="icon-text"><Icon path={mdiBriefcase} size={1} />Work</div>}
                     content={(
                         <ShowData
                             key="work"
@@ -126,7 +129,7 @@ export default function Editor({data, setData})  {
             </div>
             <div id="educ-editor" className="editor">
                 <Accordion
-                    legend="Education Data"
+                    legend={<div className="icon-text"><Icon path={mdiBookEducation} size={1} />Education</div>}
                     content={(
                         <ShowData
                             key="education"
@@ -144,7 +147,7 @@ export default function Editor({data, setData})  {
             </div>
             <div id="skills-editor" className="editor">
                 <Accordion
-                    legend="Skills Data"
+                    legend={<div className="icon-text"><Icon path={mdiLanguageJavascript} size={1} />Skills</div>}
                     content={(
                         <ShowData
                             key="skills"

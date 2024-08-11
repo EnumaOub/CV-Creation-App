@@ -54,6 +54,12 @@
     box-shadow: 0 0 5px #4e4caf; 
 }
 
+.icon-text {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
 @media (max-width: 490px) {
     #title-editor button {
         font-size: 1rem;

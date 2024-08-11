@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import Icon from '@mdi/react';
+import { mdiArrowDownThick, mdiArrowUpThick } from '@mdi/js';
 
 export default function Accordion({ legend, content }) {
     const [open, setOpen] = useState(false);
@@ -17,8 +19,8 @@ export default function Accordion({ legend, content }) {
                 role="button">
                 <h2 className="title">{legend}</h2>
                 <div className="icon">
-                    { open ? (<p>&darr;</p>) : 
-                    (<p>&uarr;</p>) 
+                    { open ? (<Icon path={mdiArrowUpThick} size={1} />) : 
+                    (<Icon path={mdiArrowDownThick} size={1} />) 
                     }
                 </div>
             </div>
