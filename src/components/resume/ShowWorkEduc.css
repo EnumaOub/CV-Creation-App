@@ -4,3 +4,16 @@
     font-weight: bold;
     font-size: 0.9rem;
 }
+
+
+@media (max-width: 750px) {
+    .print .main {
+      font-size: .7rem;
+    }
+}
+
+@media (max-width: 490px) {
+    .print .main {
+      font-size: .5rem;
+    }
+}

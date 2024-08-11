@@ -1,5 +1,5 @@
 #editor-main {
-    margin: 2rem 3rem;
+    margin: 2rem .5rem;
 }
 
 .editor {
@@ -17,7 +17,7 @@
 }
 
 #title-editor input {
-    width: 100%;
+    max-width: 100%;
     border-radius: .4rem;
     padding: 0.5rem;
     font-size: 1.2rem;
@@ -52,4 +52,14 @@
 #title-editor button:focus {
     outline: none; 
     box-shadow: 0 0 5px #4e4caf; 
+}
+
+@media (max-width: 490px) {
+    #title-editor button {
+        font-size: 1rem;
+    }
+    #editor-main {
+        font-size: .8rem;
+    }
+    
 }

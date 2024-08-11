@@ -7,7 +7,6 @@
 
 #personal-editor .content-editor.active label {
     display: grid;
-    grid-template-columns: 0.3fr 1fr;
     gap: 0.3rem;
     align-items: center;
 }
@@ -33,4 +32,19 @@
 
     grid-template-columns: 0.128fr 1fr;
     grid-column: span 2
+}
+
+
+@media (max-width: 650px) {
+    #personal-editor .content-editor.active {
+        display: flex;
+        flex-direction: column;
+    }
+    #personal-editor .content-editor.active input {
+        font-size: 1rem;
+    }
+    #editor-main {
+        font-size: .8rem;
+    }
+
 }

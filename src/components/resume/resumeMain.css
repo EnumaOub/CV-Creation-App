@@ -5,11 +5,27 @@
     padding: 1rem;
     font-family: "Calibri", sans-serif;
     font-size: 1rem;
-    word-spacing: normal;
 }
 
 #resume-main h2 {
     font-size: 1rem;
     color: blue;
     border-bottom: 1px solid blue;
+}
+
+
+@media (max-width: 750px) {
+    #resume-main {
+      font-size: .7rem;
+    }
+    #resume-main h2 {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 490px) {
+    #resume-main {
+      font-size: .5rem;
+    }
 }

@@ -21,3 +21,31 @@
 #personal-resume #summary{
     text-align: center;
 }
+
+@media (max-width: 750px) {
+    #personal-resume h1{
+        font-size: 1.2rem;
+    }
+    #personal-resume {
+      font-size: .7rem;
+    }
+}
+
+@media (max-width:580px) {
+    #personal-resume h1{
+        font-size: .8rem;
+    }
+    #personal-resume {
+        font-size: .6rem;
+    }
+}
+
+
+@media (max-width: 490px) {
+    #personal-resume h1{
+        font-size: .8rem;
+    }
+    #personal-resume {
+      font-size: .5rem;
+    }
+}
